@@ -8,7 +8,7 @@
     <title>QCM - Qualiopy</title>
 </head>
 <body>
-    <section class="container-fluid justify-content-center align-content-center" style="height: 100vh;">
+    <section class="container-fluid">
         
         <div class="d-flex flex-column align-items-center text-center p-1">
             
@@ -18,8 +18,10 @@
             <div class="wrapper">
                 <div class="d-flex justify-content-center">
                     <!-- Formulaire 1 -->
-                    <form id="form1" class="bg-warning p-5">
-                        <h1>Gestion d'entreprise</h1>
+                    
+                    <form id="form1" class="p-5">
+                        
+                        <!-- <h1>Gestion d'entreprise</h1> -->
                         <div class="container-formulaire">
                             <!-- Question 1 -->
                             <div class="quiz">
@@ -37,8 +39,9 @@
                                                 <div>
                                                     Non
                                                 </div>
-                                        </div>             
-                                        <button id="questionNext1" type="button" class="question-next btn btn-primary" disabled>
+                                        </div>     
+                                                
+                                        <button id="questionNext1" type="button" class="question-next " disabled>
                                             Suivant
                                         </button>
                                     </div>
@@ -61,15 +64,15 @@
                                                     Non
                                                 </div> 
                                         </div>             
-                                        <button id="questionNext2" type="button" class="question-next btn btn-primary" disabled>
+                                        <button id="questionNext2" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id="contentEnd" class="d-flex flex-column justify-content-center" style="display:none">
-                                <h4 id="endForm" style="display:none">Passer au prochain questionnaire</h4>           
-                                <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante" class="btn tbn btn-danger" style="display:none">Suivant</button>
+                            <div id="contentEnd" class="d-flex flex-column justify-content-center align-items-center" style="display:none">
+                                <h4 id="endForm" style="display:none">Gestion de comptabilité</h4>           
+                                <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante" class="btn_question_suivante" style="display:none">Suivant</button>
                             </div>
                             
                             
@@ -77,13 +80,13 @@
                     </form>
 
                     <!-- Formulaire 2 -->
-                    <form id="form2" class="bg-primary p-5">
-                        <h1>Gestion de comptabilité</h1>
+                    <form id="form2" class="p-5">
+                        <!-- <h1>Gestion de comptabilité</h1> -->
                         <div class="container-formulaire">
                             <!-- Question 1 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
-                                    <h5 class="title-quiz bg-warning">Avez vous déjà suivi une formation de comptabilité ?</h5>
+                                    <h5 class="title-quiz">Avez vous déjà suivi une formation de comptabilité ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
                                                 <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
@@ -97,7 +100,7 @@
                                                     Non
                                                 </div>
                                         </div>             
-                                        <button id="questionNext1" type="button" class="question-next btn btn-primary" disabled>
+                                        <button id="questionNext1" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
@@ -106,7 +109,7 @@
                             <!-- Question 2 -->
                             <div class="quiz">
                                 <div class="quiz-content">
-                                    <h5 class="title-quiz bg-warning">Avez vous déjà utilisé WOCOMPTA ?</h5>
+                                    <h5 class="title-quiz">Avez vous déjà utilisé WOCOMPTA ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
                                                 <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
@@ -120,23 +123,23 @@
                                                     Non
                                                 </div>
                                         </div>             
-                                        <button id="questionNext1" type="button" class="question-next btn btn-primary" disabled>
+                                        <button id="questionNext1" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
                             </div> 
                             <div class="quiz">
-                                <div  class="quiz-content question-visible">
-                                    <h2> Passer au prochain questionnaire</h2>
-                                    <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante" class="btn tbn btn-light">Suivant</button>
+                                <div class="quiz-content question-visible">
+                                    <h4>Gestion de paie</h4>
+                                    <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante" class="btn_question_suivante">Suivant</button>
                                 </div>
                             </div>           
                         </div>
                     </form>
 
-                    <form id="form3" class="bg-primary p-5">
-                        <h1>Pour la gestion de paie</h1>
+                    <form id="form3" class="p-5">
+                        <!-- <h1>Pour la gestion de paie</h1> -->
                         <br>
                         <div class="container-formulaire">
                             <!-- Question 1 -->
@@ -157,7 +160,7 @@
                                                 </div>
                                                 
                                         </div>             
-                                        <button id="questionNext5" type="button" class="question-next btn btn-light" disabled>
+                                        <button id="questionNext5" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
@@ -181,7 +184,7 @@
                                                 </div>
                                                  
                                         </div>             
-                                        <button id="questionNext6" type="button" class="question-next btn btn-light" disabled>
+                                        <button id="questionNext6" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
@@ -205,7 +208,7 @@
                                                 </div>
                                                  
                                         </div>             
-                                        <button id="questionNext7" type="button" class="question-next btn btn-light" disabled>
+                                        <button id="questionNext7" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
@@ -229,7 +232,7 @@
                                                 </div>
                                                  
                                         </div>             
-                                        <button id="questionNext8" type="button" class="question-next btn btn-light" disabled>
+                                        <button id="questionNext8" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
@@ -237,7 +240,7 @@
                             </div> 
                             <div class="quiz">
                                 <div  class="quiz-content question-visible">
-                                    <h2> Fin du formulaire </h2>
+                                    <h4> Fin du formulaire </h4>
                                     <!-- Affichage du résultat -->
                                     <a href="#" class="btn btn-light ms-2"> Résultat</a>
                                 </div>

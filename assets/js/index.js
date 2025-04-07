@@ -93,11 +93,13 @@ function initFormulaire1() {
     buttons.forEach((button, i) => {
         const options = questions[i].querySelectorAll(".response");
         button.disabled = true;
+        button.style.display = 'none';
 
         // Activation du bouton suivant lorsque l'utilisateur choisit une réponse
         options.forEach((option) => {
             option.addEventListener("change", () => {
                 button.disabled = false;
+                button.style.display = 'block';
             });
         });
 
@@ -171,8 +173,8 @@ function initFormulaire2() {
 }
 
 function initFormulaire3() {
-    const questions2 = document.querySelectorAll("#form2 .quiz-content");
-    const buttons2 = document.querySelectorAll("#form2 .question-next");
+    const questions2 = document.querySelectorAll("#form3 .quiz-content");
+    const buttons2 = document.querySelectorAll("#form3 .question-next");
     const finalButton = document.getElementById("btn_question_suivante");
 
     // Cacher toutes les questions sauf la première
