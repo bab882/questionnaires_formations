@@ -74,50 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
     formulaire3.style.display = "none";
 
     // Initialisation des formulaires
-    initFormulaire0();
     initFormulaire1();
     initFormulaire2();
     initFormulaire3();
 });
-
-function initFormulaire0() {
-    const buttons0 = document.querySelectorAll("#form0 .question-next");
-    const contentEnd = document.getElementById("contentEnd");
-    const finalTitle = document.getElementById("endForm");
-
-
-    // Gérer l'affichage des questions et la navigation
-    buttons0.forEach((button, i) => {
-        const options = infos[i].querySelectorAll(".infos");
-        button.disabled = true;
-        button.style.display = 'none';
-
-        // Activation du bouton suivant lorsque que les champs sont remplis
-        options.forEach((option) => {
-            option.addEventListener("change", () => {
-                button.disabled = false;
-                button.style.display = 'block';
-            });
-        });
-
-        // Change de question lorsqu'on clique sur le bouton "Suivant"
-        button.addEventListener("click", () => {
-            questions[i].classList.remove("question-visible");
-
-            if (questions[i + 1]) {
-                questions[i + 1].classList.add("question-visible");
-            }
-
-            // Vérifie si toutes les questions ont été répondues
-            if (areAllQuestionsAnswered(questions)) {
-                contentEnd.style.display = "block";
-                finalTitle.style.display = "block"; // Affiche le titre de fin 
-                finalButton.style.display = "block"; // Affiche le bouton "Suivant" final
-            }
-        });
-    });
-}
-
 
 // Fonction pour initialiser l'affichage des questions dans le formulaire 1
 function initFormulaire1() {
@@ -163,14 +123,6 @@ function initFormulaire1() {
                 finalButton.style.display = "block"; // Affiche le bouton "Suivant" final
             }
         });
-    });
-}
-
-// Fonction pour vérifier si toutes les questions dans le formulaire 1 ont été répondues
-function areAllQuestionsAnswered(questions) {
-    return Array.from(questions).every((question) => {
-        const options = question.querySelectorAll(".response");
-        return Array.from(options).some(option => option.checked); // Vérifie si au moins une option est sélectionnée
     });
 }
 
@@ -259,10 +211,11 @@ function initFormulaire3() {
     });
 }
 
-// function areAllQuestionsAnswered(questions2) {
-//     return Array.from(questions2).every((questions2) => {
-//         const options = questions2.querySelectorAll(".response");
-//         return Array.from(options).some(option => option.checked); // Vérifie si au moins une option est sélectionnée
-//     });
-// }
+// Fonction pour vérifier si toutes les questions dans le formulaire ont été répondues
+function areAllQuestionsAnswered(questions) {
+    return Array.from(questions).every((question) => {
+        const options = question.querySelectorAll(".response");
+        return Array.from(options).some(option => option.checked);
+    });
+}
 
