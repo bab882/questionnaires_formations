@@ -234,16 +234,3 @@ function areAllQuestionsAnswered(questions2) {
 }
 
 
-$(document).ready(function() {
-
-    $("input[type='radio']").change(function() {
-
-        const results = {};
-
-        $("input[type='radio']:checked").each(function() {
-            results[$(this).attr("name")] = $(this).val();
-        });
-        console.log(results);
-        sessionStorage.setItem('quizResults', JSON.stringify(results));
-    });
-});
