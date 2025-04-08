@@ -1,16 +1,16 @@
 var x = document.getElementById("btn_oui_1");
 console.log(x);
 
+// Fonction pour afficher et cacher formulaire
+function afficheFormulaire() {
 
-// Fonction pour ouvrir le Quiz
-function openFormulaire() {
-    // Récupération des champs
     const societe = document.querySelector(".societe");
     const name = document.querySelector(".name");
     const firstname = document.querySelector(".firstname");
     const alertForm = document.querySelector(".alert-form");
-
     const message = document.querySelector(".alert-danger");
+
+    // Box de message error
     if(message) {
         message.remove();
     }
@@ -19,7 +19,7 @@ function openFormulaire() {
     if (!societe || societe.value.trim() === "") {
         const messageError = document.createElement("div");
         messageError.className = "alert alert-danger";
-        messageError.textContent = "Veuillez remplir votre société";
+        messageError.textContent = "Veuillez remplir le nom de votre société";
         alertForm ? alertForm.appendChild(messageError) : document.body.appendChild(messageError);
         return;
     }
@@ -38,13 +38,6 @@ function openFormulaire() {
         return;
     }
 
-
-    // Si le champ est rempli, on ouvre le formulaire
-    window.location.href = "N1_01.html";
-}
-
-// Fonction pour afficher et cacher formulaire
-function afficheFormulaire() {
     const formulaire0 = document.getElementById("form0");
     const formulaire1 = document.getElementById("form1");
     const formulaire2 = document.getElementById("form2");
@@ -81,10 +74,50 @@ document.addEventListener('DOMContentLoaded', function () {
     formulaire3.style.display = "none";
 
     // Initialisation des formulaires
+    initFormulaire0();
     initFormulaire1();
     initFormulaire2();
     initFormulaire3();
 });
+
+function initFormulaire0() {
+    const buttons0 = document.querySelectorAll("#form0 .question-next");
+    const contentEnd = document.getElementById("contentEnd");
+    const finalTitle = document.getElementById("endForm");
+
+
+    // Gérer l'affichage des questions et la navigation
+    buttons0.forEach((button, i) => {
+        const options = infos[i].querySelectorAll(".infos");
+        button.disabled = true;
+        button.style.display = 'none';
+
+        // Activation du bouton suivant lorsque que les champs sont remplis
+        options.forEach((option) => {
+            option.addEventListener("change", () => {
+                button.disabled = false;
+                button.style.display = 'block';
+            });
+        });
+
+        // Change de question lorsqu'on clique sur le bouton "Suivant"
+        button.addEventListener("click", () => {
+            questions[i].classList.remove("question-visible");
+
+            if (questions[i + 1]) {
+                questions[i + 1].classList.add("question-visible");
+            }
+
+            // Vérifie si toutes les questions ont été répondues
+            if (areAllQuestionsAnswered(questions)) {
+                contentEnd.style.display = "block";
+                finalTitle.style.display = "block"; // Affiche le titre de fin 
+                finalButton.style.display = "block"; // Affiche le bouton "Suivant" final
+            }
+        });
+    });
+}
+
 
 // Fonction pour initialiser l'affichage des questions dans le formulaire 1
 function initFormulaire1() {
@@ -226,11 +259,10 @@ function initFormulaire3() {
     });
 }
 
-function areAllQuestionsAnswered(questions2) {
-    return Array.from(questions2).every((questions2) => {
-        const options = questions2.querySelectorAll(".response");
-        return Array.from(options).some(option => option.checked); // Vérifie si au moins une option est sélectionnée
-    });
-}
-
+// function areAllQuestionsAnswered(questions2) {
+//     return Array.from(questions2).every((questions2) => {
+//         const options = questions2.querySelectorAll(".response");
+//         return Array.from(options).some(option => option.checked); // Vérifie si au moins une option est sélectionnée
+//     });
+// }
 

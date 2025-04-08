@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +8,57 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>QCM - Qualiopy</title>
 </head>
+
 <body>
     <section class="container-fluid">
-        
         <div class="d-flex flex-column align-items-center text-center p-1">
-            
             <div class="container-img">
                 <img src="../img/logo.png" alt="logo">
             </div>
             <div class="wrapper">
                 <div class="d-flex justify-content-center">
-                    <!-- Formulaire 1 -->
+                    <!-- Formulaire 0 -->
                     <form id="form0" class="p-5">
                         <div class="d-flex flex-column align-items-center">
-                            <input id="society" class="my-2 societe" type="text" placeholder="Indiquez votre société" required />
-                            <input id="name" class="my-2 name" type="text"  placeholder="Nom" required>
-                            <input id="firstname" class="my-2 firstname" type="text"  placeholder="Prénom" required>
+                            <input id="society" class="my-2 societe infos" type="text"
+                                placeholder="Indiquez votre société" required />
+                            <input id="name" class="my-2 name infos" type="text" placeholder="Nom" required>
+                            <input id="firstname" class="my-2 firstname infos" type="text" placeholder="Prénom"
+                                required>
                             <div class="alert-form" role="alert">
                             </div>
-                            <button 
-                                id="questionNext0" 
-                                onclick=afficheFormulaire()
-                                type="button" 
-                                class="question ">
+                            <button id="questionNext0" onclick=afficheFormulaire() type="button" class="question ">
                                 Commencer
                             </button>
-                        </div> 
+                        </div>
                     </form>
+                    <!-- Formulaire 1 -->
                     <form id="form1" class="p-5">
-                        <!-- <h1>Gestion d'entreprise</h1> -->
                         <div class="container-formulaire">
                             <!-- Question 1 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
-                                    <h5 class="title-quiz">Avez vous déjà suivi une formation sur la gestion commerciale ?</h5>
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion d'entreprise :</strong>
+                                    </h2>
+                                    <h5 class="title-quiz">Avez vous déjà suivi une formation sur la gestion commerciale
+                                        ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
-                                                <input class="response my-2 row" type="radio" name="Q1_q1" value="oui" id="btn_oui_1">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                            <input class="response my-2 row" type="radio" name="Q1_q1" value="oui"
+                                                id="btn_oui_1">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="Q1_q1" value="non" id="btn_oui_1">
-                                                <div>
-                                                    Non
-                                                </div>
-                                        </div>     
-                                                
+                                            <input class="response my-2 row" type="radio" name="Q1_q1" value="non"
+                                                id="btn_oui_1">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
+
                                         <button id="questionNext1" type="button" class="question-next " disabled>
                                             Suivant
                                         </button>
@@ -64,35 +68,41 @@
                             <!-- Question 2 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
-                                    <h5 class="title-quiz">Avez  vous déjà utilisé WONETT ?</h5>
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion d'entreprise :</strong>
+                                    </h2>
+                                    <h5 class="title-quiz">Avez vous déjà utilisé WONETT ?</h5>
                                     <div class="d-flex flex-column align-items-center">
-                                        <div class="content-response my-2">  
-                                                <input class="response my-2 row" type="radio" name="Q1_q2" value="Oui" id="btn_oui_2">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                        <div class="content-response my-2">
+                                            <input class="response my-2 row" type="radio" name="Q1_q2" value="Oui"
+                                                id="btn_oui_2">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="Q1_q2" value="Non" id="btn_oui_2">
-                                                <div>
-                                                    Non
-                                                </div> 
-                                        </div>             
+                                            <input class="response my-2 row" type="radio" name="Q1_q2" value="Non"
+                                                id="btn_oui_2">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
                                         <button id="questionNext2" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id="contentEnd" class="d-flex flex-column justify-content-center align-items-center" style="display:none">
-                                <h4 id="endForm" style="display:none">Gestion de comptabilité</h4>           
-                                <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante" class="btn_question_suivante" style="display:none">Suivant</button>
+                            <div id="contentEnd" class="d-flex flex-column justify-content-center align-items-center"
+                                style="display:none">
+                                <h4 id="endForm" style="display:none">
+                                    <strong>Gestion de comptabilité</strong>
+                                </h4>
+                                <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante"
+                                    class="btn_question_suivante" style="display:none">Suivant</button>
                             </div>
-                            
-                            
                         </div>
                     </form>
-
                     <!-- Formulaire 2 -->
                     <form id="form2" class="p-5">
                         <!-- <h1>Gestion de comptabilité</h1> -->
@@ -100,20 +110,25 @@
                             <!-- Question 1 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion de comptabilité :</strong>
+                                    </h2>
                                     <h5 class="title-quiz">Avez vous déjà suivi une formation de comptabilité ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
-                                                <input class="response my-2 row" type="radio" name="Q1_q3" value="oui" id="btn_oui_1">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                            <input class="response my-2 row" type="radio" name="Q1_q3" value="oui"
+                                                id="btn_oui_1">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="Q1_q3"value="non" id="btn_oui_1">
-                                                <div>
-                                                    Non
-                                                </div>
-                                        </div>             
+                                            <input class="response my-2 row" type="radio" name="Q1_q3" value="non"
+                                                id="btn_oui_1">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
                                         <button id="questionNext1" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
@@ -123,57 +138,68 @@
                             <!-- Question 2 -->
                             <div class="quiz">
                                 <div class="quiz-content">
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion de comptabilité :</strong>
+                                    </h2>
                                     <h5 class="title-quiz">Avez vous déjà utilisé WOCOMPTA ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
-                                                <input class="response my-2 row" type="radio" name="Q1_q4" value="oui" id="btn_oui_1">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                            <input class="response my-2 row" type="radio" name="Q1_q4" value="oui"
+                                                id="btn_oui_1">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="Q1_q4" value="non" id="btn_oui_1">
-                                                <div>
-                                                    Non
-                                                </div>
-                                        </div>             
+                                            <input class="response my-2 row" type="radio" name="Q1_q4" value="non"
+                                                id="btn_oui_1">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
                                         <button id="questionNext1" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
-                                    <h4>Gestion de paie</h4>
-                                    <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante" class="btn_question_suivante">Suivant</button>
+                                    <h4 id="endForm" style="display:none">
+                                        <strong>Gestion de paie</strong>
+                                    </h4>
+                                    <button onclick="afficheFormulaire()" type="button" id="btn_question_suivante"
+                                        class="btn_question_suivante">Suivant</button>
                                 </div>
-                            </div>           
+                            </div>
                         </div>
                     </form>
-
+                    <!-- Formulaire 3 -->
                     <form id="form3" class="p-5">
-                        <!-- <h1>Pour la gestion de paie</h1> -->
-                        <br>
                         <div class="container-formulaire">
                             <!-- Question 1 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion de paie :</strong>
+                                    </h2>
                                     <h5 class="title-quiz">Avez déjà suivi une formation sur la gestion RH ? </h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response">
-                                                <input class="response row" type="radio" name="Q1_q5" id="btn_oui_8" value="oui">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                            <input class="response row" type="radio" name="Q1_q5" id="btn_oui_8"
+                                                value="oui">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response  row" type="radio" name="Q1_q5" id="btn_oui_9" value="non">
-                                                <div>
-                                                    Non
-                                                </div>
-                                                
-                                        </div>             
+                                            <input class="response  row" type="radio" name="Q1_q5" id="btn_oui_9"
+                                                value="non">
+                                            <div>
+                                                Non
+                                            </div>
+
+                                        </div>
                                         <button id="questionNext5" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
@@ -183,94 +209,110 @@
                             <!-- Question 2 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion de paie :</strong>
+                                    </h2>
                                     <h5 class="title-quiz">Avez vous déjà suivi une formation de gestion de paie ? </h5>
                                     <div class="d-flex flex-column align-items-center">
-                                        <div class="content-response">  
-                                                <input class="response row" type="radio" name="Q1_q6" id="btn_oui_10" value="oui">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                        <div class="content-response">
+                                            <input class="response row" type="radio" name="Q1_q6" id="btn_oui_10"
+                                                value="oui">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response " type="radio" name="Q1_q6" id="btn_oui_11" value="non">
-                                                <div>
-                                                    Non
-                                                </div>
-                                                 
-                                        </div>             
+                                            <input class="response " type="radio" name="Q1_q6" id="btn_oui_11"
+                                                value="non">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
                                         <button id="questionNext6" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <!-- question 3 -->
                             <div class="quiz">
                                 <div class="quiz-content question-visible">
-                                    <h5 class="title-quiz">Avez vous déjà suivi une formation sur la Déclaration Social Nominative ? </h5>
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion de paie :</strong>
+                                    </h2>
+                                    <h5 class="title-quiz">Avez vous déjà suivi une formation sur la Déclaration Social
+                                        Nominative ? </h5>
                                     <div class="d-flex flex-column align-items-center">
-                                        <div class="content-response">  
-                                                <input class="response row" type="radio" name="Q1_q7" id="btn_oui_12" value="oui">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                        <div class="content-response">
+                                            <input class="response row" type="radio" name="Q1_q7" id="btn_oui_12"
+                                                value="oui">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response " type="radio" name="Q1_q7" id="btn_oui_12" value="non">
-                                                <div>
-                                                    Non
-                                                </div>
-                                                 
-                                        </div>             
+                                            <input class="response " type="radio" name="Q1_q7" id="btn_oui_12"
+                                                value="non">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
                                         <button id="questionNext7" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
-                            </div> 
-                             <!-- question 4 -->
-                             <div class="quiz">
+                            </div>
+                            <!-- question 4 -->
+                            <div class="quiz">
                                 <div class="quiz-content question-visible">
+                                    <h2 class="title-quiz">
+                                        <strong>Gestion de paie :</strong>
+                                    </h2>
                                     <h5 class="title-quiz">Avez vous déjà utilisé le logiciel WOPAIE? </h5>
                                     <div class="d-flex flex-column align-items-center">
-                                        <div class="content-response">  
-                                                <input class="response row" type="radio" name="Q1_q8" id="btn_oui_13" value="oui">
-                                                <div>
-                                                    Oui
-                                                </div>
+                                        <div class="content-response">
+                                            <input class="response row" type="radio" name="Q1_q8" id="btn_oui_13"
+                                                value="oui">
+                                            <div>
+                                                Oui
+                                            </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response " type="radio" name="Q1_q8" id="btn_oui_13" value="non">
-                                                <div>
-                                                    Non
-                                                </div>
-                                                 
-                                        </div>             
+                                            <input class="response " type="radio" name="Q1_q8" id="btn_oui_13"
+                                                value="non">
+                                            <div>
+                                                Non
+                                            </div>
+                                        </div>
                                         <button id="questionNext8" type="button" class="question-next" disabled>
                                             Suivant
                                         </button>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="quiz">
-                                <div  class="quiz-content question-visible">
-                                    <h4> Fin du formulaire </h4>
+                                <div class="quiz-content question-visible">
+                                    <h4>
+                                        Félicitation vous avez fini le QCM !
+                                    </h4>
                                     <!-- Affichage du résultat -->
-                                    <a href="#" class="btn btn-light ms-2"> Résultat</a>
+                                    <!-- <a href="#" class="btn btn-light ms-2"> Résultat</a> -->
                                 </div>
                             </div>
                         </div>
-                        </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
+        </div>
     </section>
-     
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/form.js"></script>
     <script src="../js/index.js"></script>
-    
+
 </body>
+
 </html>
