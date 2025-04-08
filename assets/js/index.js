@@ -1,3 +1,7 @@
+var x = document.getElementById("btn_oui_1");
+console.log(x);
+
+
 // Fonction pour ouvrir le Quiz
 function openFormulaire() {
     // Récupération des champs
@@ -41,11 +45,18 @@ function openFormulaire() {
 
 // Fonction pour afficher et cacher formulaire
 function afficheFormulaire() {
+    const formulaire0 = document.getElementById("form0");
     const formulaire1 = document.getElementById("form1");
     const formulaire2 = document.getElementById("form2");
     const formulaire3 = document.getElementById("form3");
 
-    if (formulaire1.style.display !== "none") {
+    if(formulaire0.style.display !== "none") {
+        formulaire0.style.display = "none";
+        formulaire1.style.display = "block";
+        formulaire2.style.display = "none";
+        formulaire3.style.display = "none";
+    }
+    else if (formulaire1.style.display !== "none") {
         formulaire1.style.display = "none";
         formulaire2.style.display = "block";
         formulaire3.style.display = "none";
@@ -59,12 +70,13 @@ function afficheFormulaire() {
 
 // Fonction qui s'assure que le DOM est complètement chargé avant d'exécuter le script
 document.addEventListener('DOMContentLoaded', function () {
+    const formulaire0 = document.getElementById("form0")
     const formulaire1 = document.getElementById("form1");
     const formulaire2 = document.getElementById("form2");
     const formulaire3 = document.getElementById("form3");
     
-
-    formulaire1.style.display = "block";
+    formulaire0.style.display = "block";
+    formulaire1.style.display = "none";
     formulaire2.style.display = "none";
     formulaire3.style.display = "none";
 
@@ -220,3 +232,18 @@ function areAllQuestionsAnswered(questions2) {
         return Array.from(options).some(option => option.checked); // Vérifie si au moins une option est sélectionnée
     });
 }
+
+
+$(document).ready(function() {
+
+    $("input[type='radio']").change(function() {
+
+        const results = {};
+
+        $("input[type='radio']:checked").each(function() {
+            results[$(this).attr("name")] = $(this).val();
+        });
+        console.log(results);
+        sessionStorage.setItem('quizResults', JSON.stringify(results));
+    });
+});

@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("input[type='radio']").change(function() {
 
-        let results = {};
+        var results = {};
 
         $("input[type='radio']:checked").each(function() {
             results[$(this).attr("name")] = $(this).val();

@@ -18,9 +18,23 @@
             <div class="wrapper">
                 <div class="d-flex justify-content-center">
                     <!-- Formulaire 1 -->
-                    
+                    <form id="form0" class="p-5">
+                        <div class="d-flex flex-column">
+                            <input class="my-2 societe" type="text" value="societe" placeholder="Indiquez votre société" required />
+                            <input class="my-2 name" type="text" value="nom" placeholder="Nom" required>
+                            <input class="my-2 firstname" type="text" value="prenom" placeholder="Prénom" required>
+                            <div class="alert-form" role="alert">
+                            </div>
+                            <button 
+                                id="questionNext0" 
+                                onclick=afficheFormulaire()
+                                type="button" 
+                                class="btn btn-primary">
+                                Commencer
+                            </button>
+                        </div> 
+                    </form>
                     <form id="form1" class="p-5">
-                        
                         <!-- <h1>Gestion d'entreprise</h1> -->
                         <div class="container-formulaire">
                             <!-- Question 1 -->
@@ -29,13 +43,13 @@
                                     <h5 class="title-quiz">Avez vous déjà suivi une formation sur la gestion commerciale ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
-                                                <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
+                                                <input class="response my-2 row" type="radio" name="Q1_q1" value="oui" id="btn_oui_1">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
+                                                <input class="response my-2 row" type="radio" name="Q1_q1" value="non" id="btn_oui_1">
                                                 <div>
                                                     Non
                                                 </div>
@@ -53,13 +67,13 @@
                                     <h5 class="title-quiz">Avez  vous déjà utilisé WONETT ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">  
-                                                <input class="response my-2 row" type="radio" name="option2" id="btn_oui_2">
+                                                <input class="response my-2 row" type="radio" name="Q1_q2" value="Oui" id="btn_oui_2">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="option2" id="btn_oui_2">
+                                                <input class="response my-2 row" type="radio" name="Q1_q2" value="Non" id="btn_oui_2">
                                                 <div>
                                                     Non
                                                 </div> 
@@ -89,13 +103,13 @@
                                     <h5 class="title-quiz">Avez vous déjà suivi une formation de comptabilité ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
-                                                <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
+                                                <input class="response my-2 row" type="radio" name="Q1_q3" value="oui" id="btn_oui_1">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
+                                                <input class="response my-2 row" type="radio" name="Q1_q3"value="non" id="btn_oui_1">
                                                 <div>
                                                     Non
                                                 </div>
@@ -112,13 +126,13 @@
                                     <h5 class="title-quiz">Avez vous déjà utilisé WOCOMPTA ?</h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response my-2">
-                                                <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
+                                                <input class="response my-2 row" type="radio" name="Q1_q4" value="oui" id="btn_oui_1">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response my-2 row" type="radio" name="option1" id="btn_oui_1">
+                                                <input class="response my-2 row" type="radio" name="Q1_q4" value="non" id="btn_oui_1">
                                                 <div>
                                                     Non
                                                 </div>
@@ -148,13 +162,13 @@
                                     <h5 class="title-quiz">Avez déjà suivi une formation sur la gestion RH ? </h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response">
-                                                <input class="response row" type="radio" name="Question5" id="btn_oui_8" value="oui">
+                                                <input class="response row" type="radio" name="Q1_q5" id="btn_oui_8" value="oui">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response  row" type="radio" name="Question5" id="btn_oui_9" value="non">
+                                                <input class="response  row" type="radio" name="Q1_q5" id="btn_oui_9" value="non">
                                                 <div>
                                                     Non
                                                 </div>
@@ -172,13 +186,13 @@
                                     <h5 class="title-quiz">Avez vous déjà suivi une formation de gestion de paie ? </h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response">  
-                                                <input class="response row" type="radio" name="Question6" id="btn_oui_10" value="oui">
+                                                <input class="response row" type="radio" name="Q1_q6" id="btn_oui_10" value="oui">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response " type="radio" name="Question6" id="btn_oui_11" value="non">
+                                                <input class="response " type="radio" name="Q1_q6" id="btn_oui_11" value="non">
                                                 <div>
                                                     Non
                                                 </div>
@@ -196,13 +210,13 @@
                                     <h5 class="title-quiz">Avez vous déjà suivi une formation sur la Déclaration Social Nominative ? </h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response">  
-                                                <input class="response row" type="radio" name="Question7" id="btn_oui_12" value="oui">
+                                                <input class="response row" type="radio" name="Q1_q7" id="btn_oui_12" value="oui">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response " type="radio" name="Question7" id="btn_oui_12" value="non">
+                                                <input class="response " type="radio" name="Q1_q7" id="btn_oui_12" value="non">
                                                 <div>
                                                     Non
                                                 </div>
@@ -220,13 +234,13 @@
                                     <h5 class="title-quiz">Avez vous déjà utilisé le logiciel WOPAIE? </h5>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="content-response">  
-                                                <input class="response row" type="radio" name="Question8" id="btn_oui_13" value="oui">
+                                                <input class="response row" type="radio" name="Q1_q8" id="btn_oui_13" value="oui">
                                                 <div>
                                                     Oui
                                                 </div>
                                         </div>
                                         <div class="content-response">
-                                                <input class="response " type="radio" name="Question8" id="btn_oui_13" value="non">
+                                                <input class="response " type="radio" name="Q1_q8" id="btn_oui_13" value="non">
                                                 <div>
                                                     Non
                                                 </div>
@@ -255,7 +269,7 @@
      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/form.js"></script>
+    <!-- <script src="../js/form.js"></script> -->
     <script src="../js/index.js">
     </script>
 </body>
