@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: red; */
     height: 200px;
     width: 200px;
 }
@@ -25,6 +24,40 @@
     width: 200px;
 }
 
+.societe,
+.name,
+.firstname {
+    border: 1px solid rgb(21,92,130);
+    width: 250px;
+    border-radius: 30px;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+.question {
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #f7f7f7;
+    background: rgb(21,92,130);
+}
+
+.question:hover {
+    border: 1px solid rgb(21,92,130);
+    color: rgb(21,92,130);
+    background: #f7f7f7;
+    transition: 0.3s ease-in;
+}
+
 #form1 {
     width: 300px;
     margin: 0 10px;
@@ -32,7 +65,7 @@
 .quiz-content {
     display: none;  
 }
-/* d-flex flex-column justify-content-center align-items-center */
+
 .quiz-content.question-visible {
     display: block;
     display: flex;
